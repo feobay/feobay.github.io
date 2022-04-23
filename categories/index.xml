@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Categories on FeoBay</title>
+        <link>https://feobay.github.io/categories/</link>
+        <description>Recent content in Categories on FeoBay</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Sat, 23 Apr 2022 16:56:56 +0800</lastBuildDate><atom:link href="https://feobay.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Data Structure</title>
+        <link>https://feobay.github.io/categories/datastructure/</link>
+        <pubDate>Sat, 23 Apr 2022 16:56:56 +0800</pubDate>
+        
+        <guid>https://feobay.github.io/categories/datastructure/</guid>
+        <description>&lt;img src="https://feobay.oss-cn-shanghai.aliyuncs.com/img/image-20220423164716637.png" alt="Featured image of post Data Structure" /&gt;</description>
+        </item>
+        <item>
+        <title>record</title>
+        <link>https://feobay.github.io/categories/record/</link>
+        <pubDate>Sat, 23 Apr 2022 00:54:23 +0800</pubDate>
+        
+        <guid>https://feobay.github.io/categories/record/</guid>
+        <description>&lt;img src="https://feobay.github.io/categories/record/Record.jpg" alt="Featured image of post record" /&gt;</description>
+        </item>
+        <item>
+        <title>syntax</title>
+        <link>https://feobay.github.io/categories/syntax/</link>
+        <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
+        
+        <guid>https://feobay.github.io/categories/syntax/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>themes</title>
+        <link>https://feobay.github.io/categories/themes/</link>
+        <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
+        
+        <guid>https://feobay.github.io/categories/themes/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Test</title>
+        <link>https://feobay.github.io/categories/test/</link>
+        <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
+        
+        <guid>https://feobay.github.io/categories/test/</guid>
+        <description>&lt;img src="https://feobay.github.io/categories/test/hutomo-abrianto-l2jk-uxb1BY-unsplash.jpg" alt="Featured image of post Test" /&gt;</description>
+        </item>
+        <item>
+        <title>Test with whitespaces</title>
+        <link>https://feobay.github.io/categories/test-with-whitespaces/</link>
+        <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
+        
+        <guid>https://feobay.github.io/categories/test-with-whitespaces/</guid>
+        <description></description>
+        </item>
+        
+    </channel>
+</rss>
