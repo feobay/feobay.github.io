@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>进阶数据结构专题 | FeoBay的个人博客</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="https://feobay.oss-cn-shanghai.aliyuncs.com/img/terminal.svg">
+    <meta name="description" content="Just for fun">
+    
+    <link rel="preload" href="/assets/css/0.styles.6d920bc0.css" as="style"><link rel="preload" href="/assets/js/app.72c8bf2a.js" as="script"><link rel="preload" href="/assets/js/2.2702b4bf.js" as="script"><link rel="preload" href="/assets/js/11.632e5645.js" as="script"><link rel="prefetch" href="/assets/js/10.a94df392.js"><link rel="prefetch" href="/assets/js/12.55b415ad.js"><link rel="prefetch" href="/assets/js/13.b6a9667b.js"><link rel="prefetch" href="/assets/js/14.9fa2841e.js"><link rel="prefetch" href="/assets/js/15.db6a460d.js"><link rel="prefetch" href="/assets/js/16.051721e3.js"><link rel="prefetch" href="/assets/js/17.1a82dfdf.js"><link rel="prefetch" href="/assets/js/18.b3fd6f3e.js"><link rel="prefetch" href="/assets/js/19.013ce65f.js"><link rel="prefetch" href="/assets/js/20.c1c40422.js"><link rel="prefetch" href="/assets/js/21.a2cce3e9.js"><link rel="prefetch" href="/assets/js/3.3c9c7e39.js"><link rel="prefetch" href="/assets/js/4.d25869ab.js"><link rel="prefetch" href="/assets/js/5.1840f9a3.js"><link rel="prefetch" href="/assets/js/6.03bfa775.js"><link rel="prefetch" href="/assets/js/7.368f46d5.js"><link rel="prefetch" href="/assets/js/8.e438b600.js"><link rel="prefetch" href="/assets/js/9.39ebbd5e.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.6d920bc0.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="https://feobay.oss-cn-shanghai.aliyuncs.com/img/terminal.svg" alt="FeoBay的个人博客" class="logo"> <span class="site-name can-hide">FeoBay的个人博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/cs-basis/" class="nav-link">
+  计算机基础
+</a></div><div class="nav-item"><a href="/algorithm/" class="nav-link router-link-active">
+  算法刷题
+</a></div><div class="nav-item"><a href="/notes/" class="nav-link">
+  随记
+</a></div><div class="nav-item"><a href="https://github.com/feobay" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/cs-basis/" class="nav-link">
+  计算机基础
+</a></div><div class="nav-item"><a href="/algorithm/" class="nav-link router-link-active">
+  算法刷题
+</a></div><div class="nav-item"><a href="/notes/" class="nav-link">
+  随记
+</a></div><div class="nav-item"><a href="https://github.com/feobay" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/algorithm/" aria-current="page" class="sidebar-link">算法刷题记录</a></li><li><a href="/algorithm/1_Acwing算法基础课.html" class="sidebar-link">算法基础课笔记</a></li><li><a href="/algorithm/2_LeetCode.html" class="sidebar-link">LeetCode经典面试题</a></li><li><a href="/algorithm/3_数据结构.html" class="active sidebar-link">进阶数据结构专题</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/algorithm/3_数据结构.html#平衡二叉树avl" class="sidebar-link">平衡二叉树AVL</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/algorithm/3_数据结构.html#avl树-四种失衡类型" class="sidebar-link">AVL树-四种失衡类型</a></li><li class="sidebar-sub-header"><a href="/algorithm/3_数据结构.html#sb树-size-balanced-树" class="sidebar-link">SB树（Size Balanced 树）</a></li></ul></li></ul></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="进阶数据结构专题"><a href="#进阶数据结构专题" class="header-anchor">#</a> 进阶数据结构专题</h1> <h2 id="平衡二叉树avl"><a href="#平衡二叉树avl" class="header-anchor">#</a> 平衡二叉树AVL</h2> <p>名称：AVL树</p> <p>发明者：</p> <p>​		 G.M. <strong>A</strong>delson-<strong>V</strong>elsky  &amp;  E.M. <strong>L</strong>andis</p> <p>年代： 1962年（55岁）</p> <p>性质：</p> <p>$|H(left) - H(right)| &lt;= 1$</p> <p>优点：</p> <p>由于对每个节点的左右子树的树高做了限制，所以整棵树不会退化成一个链表</p> <p><strong>问题：</strong></p> <ol><li><p>高度为H的BS树，所含的节点数量在什么范围内？</p> <p>$H &lt;= SIZE(h) &lt;= 2^n - 1$</p></li> <li><p>高度为H的AVL树，所包含的节点数量在什么范围之内？</p> <p>**low(h)**表示高度为h，AVL树所包含的最少节点的数量。</p> <p>所以 $2^h - 1 &gt;= size(h) &gt;= low(h - 1) + low(h - 2) + 1$</p> <p>因为左右子树差别为1，所以包含的节点数下限为<code>low(h - 1)</code>(高一层子树的最少节点)，加上 <code>high(h - 2)</code>(矮一层子树的最少节点)， 加上 <code>1</code> (一个根节点)</p> <p>$low(1) = 1, low(2) = 2, low(3) = 4, ...$  从3开始就可以往后递推了（斐波那契数列）增长趋势为 $1.618^n \approx 1.5^n$</p></li></ol> <p><strong>所以 AVL树提高了树形结构查找下限，保证logN。</strong></p> <p><strong>AVL树操作：</strong></p> <ul><li><p>左旋</p> <ol><li>左旋将原先根节点的右孩子置为根节点</li> <li>将原先的根节点置为左孩子</li> <li>将原先右孩子的左子树置为原先根节点的右子树（因为它上的所有值都比这个原先的根节点都大</li></ol> <p><img src="https://feobay.oss-cn-shanghai.aliyuncs.com/img/image-20220409105221263.png" alt="image-20220409105221263"></p></li> <li><p>右旋：左旋的逆操作</p> <ol><li>将原先根节点的左孩子置为根节点</li> <li>将原先根节点置为右孩子</li> <li>将原先左孩子的右子树置为新的右孩子的左子树</li></ol></li></ul> <p>​	 <img src="https://feobay.oss-cn-shanghai.aliyuncs.com/img/image-20220409105836157.png" alt="image-20220409105836157"></p> <h3 id="avl树-四种失衡类型"><a href="#avl树-四种失衡类型" class="header-anchor">#</a> AVL树-四种失衡类型</h3> <p><strong>LL型</strong>： 左孩子的左子树树高高一点</p> <p><strong>RR型</strong>：右孩子的右子树树高高一点</p> <p><strong>LR型</strong>： 左孩子的右子树树高高一点</p> <p><strong>RL型</strong>： 右孩子的左子树树高高一点</p> <p><img src="https://feobay.oss-cn-shanghai.aliyuncs.com/img/image-20220409110706856.png" alt="image-20220409110706856"></p> <p>**对于LL型：**右旋</p> <p><img src="https://feobay.oss-cn-shanghai.aliyuncs.com/img/image-20220409144944668.png" alt="image-20220409144944668"></p> <p>$$
+hk_1 = hk_2 + 1 \
+hk_2 = hk_3 + 2 \
+h_A = h_B + 1 \
+hk_3 = max(h_C, h_D) + 1 \
+h_A = max(h_C, h_D) + 2
+$$</p> <p>**对于RR型：**是LL型镜像，左旋即可。</p> <p><strong>对于LR型：</strong></p> <p><img src="https://feobay.oss-cn-shanghai.aliyuncs.com/img/image-20220409192831327.png" alt="image-20220409192831327" style="zoom:50%;">  $$h_{k_1} = h_{k_2} + 1 \ h_{k_2} = h_D + 2 \ h_{k_2} = h_{k_3} + 1 \ h_{k_3} = h_A + 1 \ h_{k_3} = max(h_B, h_C) + 1 \ h_A + 1 = max(h_B, h_C) + 1 \ \therefore h_A = max(h_B, h_C) = h_D$$</p> <ol><li><p>LR-&gt;先左旋左子树-&gt;LL</p> <img src="https://feobay.oss-cn-shanghai.aliyuncs.com/img/image-20220409200045504.png" alt="image-20220409200045504" style="zoom:67%;"> <p>2.LL-&gt;再右旋整个树</p></li></ol> <p>**对于RL型：**是LR的镜像，先右旋右子树，再大左旋</p> <p><strong>实现代码</strong></p> <div class="language-Cpp extra-class"><pre class="language-cpp"><code><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;cstdio&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;cstdlib&gt;</span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token keyword">struct</span> <span class="token class-name">Node</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> key<span class="token punctuation">,</span> h<span class="token punctuation">;</span>
+    Node <span class="token operator">*</span>lchild<span class="token punctuation">,</span> <span class="token operator">*</span>rchild<span class="token punctuation">;</span>
+    <span class="token comment">// Node() : key(0), h(0), lchild(nullptr), rchild(nullptr) {};</span>
+    <span class="token comment">// Node(int _key) : key(_key), h(1), lchild(nullptr), rchild(nullptr) {}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// decrease the judge cases, we can do like the following:</span>
+<span class="token comment">// use NIL to replace all the nullptr</span>
+Node __NIL<span class="token punctuation">;</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">NIL</span> <span class="token expression"><span class="token punctuation">(</span><span class="token operator">&amp;</span>__NIL<span class="token punctuation">)</span></span></span>
+<span class="token function">__attribute__</span><span class="token punctuation">(</span><span class="token punctuation">(</span>constructor<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// make NIL extand in advance</span>
+<span class="token keyword">void</span> <span class="token function">init_NIL</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    NIL<span class="token operator">-&gt;</span>key <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> NIL<span class="token operator">-&gt;</span>h <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> 
+    NIL<span class="token operator">-&gt;</span>lchild <span class="token operator">=</span> NIL<span class="token operator">-&gt;</span>rchild <span class="token operator">=</span> NIL<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">inline</span> <span class="token keyword">int</span> <span class="token function">H</span><span class="token punctuation">(</span>Node <span class="token operator">*</span>root<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> root <span class="token operator">!=</span> NIL <span class="token operator">?</span> root<span class="token operator">-&gt;</span>h <span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">inline</span> <span class="token keyword">int</span> <span class="token function">KEY</span><span class="token punctuation">(</span>Node <span class="token operator">*</span>root<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> root <span class="token operator">!=</span> NIL<span class="token operator">?</span> root<span class="token operator">-&gt;</span>key <span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+Node <span class="token operator">*</span><span class="token function">getNewNode</span><span class="token punctuation">(</span><span class="token keyword">int</span> val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    Node <span class="token operator">*</span>p <span class="token operator">=</span> <span class="token punctuation">(</span>Node <span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>Node<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    p<span class="token operator">-&gt;</span>key <span class="token operator">=</span> val<span class="token punctuation">;</span>
+    p<span class="token operator">-&gt;</span>h <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    p<span class="token operator">-&gt;</span>lchild <span class="token operator">=</span> p<span class="token operator">-&gt;</span>rchild <span class="token operator">=</span> NIL<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> p<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// when we insert a node, we need to update the height</span>
+<span class="token keyword">void</span> <span class="token function">update_height</span><span class="token punctuation">(</span>Node <span class="token operator">*</span>root<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> h1 <span class="token operator">=</span> <span class="token function">H</span><span class="token punctuation">(</span>root<span class="token operator">-&gt;</span>lchild<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> h2 <span class="token operator">=</span> <span class="token function">H</span><span class="token punctuation">(</span>root<span class="token operator">-&gt;</span>rchild<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    root<span class="token operator">-&gt;</span>h <span class="token operator">=</span> <span class="token punctuation">(</span>h1 <span class="token operator">&gt;</span> h2 <span class="token operator">?</span> h1 <span class="token operator">:</span> h2<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// right rotate</span>
+Node <span class="token operator">*</span><span class="token function">right_rotate</span><span class="token punctuation">(</span>Node <span class="token operator">*</span>root<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    Node <span class="token operator">*</span>tmp <span class="token operator">=</span> root<span class="token operator">-&gt;</span>lchild<span class="token punctuation">;</span>
+    root<span class="token operator">-&gt;</span>lchild <span class="token operator">=</span> tmp<span class="token operator">-&gt;</span>rchild<span class="token punctuation">;</span> <span class="token comment">// </span>
+    tmp<span class="token operator">-&gt;</span>rchild <span class="token operator">=</span> root<span class="token punctuation">;</span>
+    <span class="token function">update_height</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// root as child</span>
+    <span class="token function">update_height</span><span class="token punctuation">(</span>tmp<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// tmp as new root</span>
+    <span class="token keyword">return</span> tmp<span class="token punctuation">;</span> <span class="token comment">// be marked as root</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// left rotate </span>
+Node <span class="token operator">*</span><span class="token function">left_rotate</span><span class="token punctuation">(</span>Node <span class="token operator">*</span>root<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    Node <span class="token operator">*</span>tmp <span class="token operator">=</span> root<span class="token operator">-&gt;</span>rchild<span class="token punctuation">;</span>
+    root<span class="token operator">-&gt;</span>rchild <span class="token operator">=</span> tmp<span class="token operator">-&gt;</span>lchild<span class="token punctuation">;</span>
+    tmp<span class="token operator">-&gt;</span>lchild <span class="token operator">=</span> root<span class="token punctuation">;</span>
+    <span class="token function">update_height</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// root as left child</span>
+    <span class="token function">update_height</span><span class="token punctuation">(</span>tmp<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// tmp as new root</span>
+    <span class="token keyword">return</span> tmp<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+Node <span class="token operator">*</span><span class="token function">maintain</span><span class="token punctuation">(</span>Node <span class="token operator">*</span>root<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// need to judge the pointer exist, so we change nullptr to NIL</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">abs</span><span class="token punctuation">(</span><span class="token function">H</span><span class="token punctuation">(</span>root<span class="token operator">-&gt;</span>lchild<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token function">H</span><span class="token punctuation">(</span>roo
+                                t<span class="token operator">-&gt;</span>rchild<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">&lt;=</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token keyword">return</span> root<span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>root<span class="token operator">-&gt;</span>lchild<span class="token operator">-&gt;</span>h <span class="token operator">&gt;</span> root<span class="token operator">-&gt;</span>rchild<span class="token operator">-&gt;</span>h<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>root<span class="token operator">-&gt;</span>lchild<span class="token operator">-&gt;</span>rchild<span class="token operator">-&gt;</span>h <span class="token operator">&gt;</span> root<span class="token operator">-&gt;</span>lchild<span class="token operator">-&gt;</span>lchild<span class="token operator">-&gt;</span>h<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// LR</span>
+            root<span class="token operator">-&gt;</span>lchild <span class="token operator">=</span> <span class="token function">left_rotate</span><span class="token punctuation">(</span>root<span class="token operator">-&gt;</span>lchild<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        root <span class="token operator">=</span> <span class="token function">right_rotate</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// LL or LR</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>root<span class="token operator">-&gt;</span>rchild<span class="token operator">-&gt;</span>lchild<span class="token operator">-&gt;</span>h <span class="token operator">&gt;</span> root<span class="token operator">-&gt;</span>rchild<span class="token operator">-&gt;</span>rchild<span class="token operator">-&gt;</span>h<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// RL</span>
+            root<span class="token operator">-&gt;</span>rchild <span class="token operator">=</span> <span class="token function">right_rotate</span><span class="token punctuation">(</span>root<span class="token operator">-&gt;</span>rchild<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        root <span class="token operator">=</span> <span class="token function">left_rotate</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// RR or RL</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> root<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+Node <span class="token operator">*</span><span class="token function">insert</span><span class="token punctuation">(</span>Node <span class="token operator">*</span>root<span class="token punctuation">,</span> <span class="token keyword">int</span> val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>root <span class="token operator">==</span> NIL<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token function">getNewNode</span><span class="token punctuation">(</span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>root<span class="token operator">-&gt;</span>key <span class="token operator">==</span> val<span class="token punctuation">)</span> <span class="token keyword">return</span> root<span class="token punctuation">;</span>
+    <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>root<span class="token operator">-&gt;</span>key <span class="token operator">&gt;</span> val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        root<span class="token operator">-&gt;</span>lchild <span class="token operator">=</span> <span class="token function">insert</span><span class="token punctuation">(</span>root<span class="token operator">-&gt;</span>lchild<span class="token punctuation">,</span> val<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        root<span class="token operator">-&gt;</span>rchild <span class="token operator">=</span> <span class="token function">insert</span><span class="token punctuation">(</span>root<span class="token operator">-&gt;</span>rchild<span class="token punctuation">,</span> val<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">update_height</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token function">maintain</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// the root has two out-degree</span>
+Node <span class="token operator">*</span><span class="token function">predecedure</span><span class="token punctuation">(</span>Node <span class="token operator">*</span>root<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    Node <span class="token operator">*</span>l <span class="token operator">=</span> root<span class="token operator">-&gt;</span>lchild<span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>l<span class="token operator">-&gt;</span>rchild <span class="token operator">!=</span> NIL<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        l <span class="token operator">=</span> l<span class="token operator">-&gt;</span>rchild<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> l<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+Node <span class="token operator">*</span><span class="token function">erase</span><span class="token punctuation">(</span>Node <span class="token operator">*</span>root<span class="token punctuation">,</span> <span class="token keyword">int</span> val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>root <span class="token operator">==</span> NIL<span class="token punctuation">)</span> <span class="token keyword">return</span> NIL<span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>root<span class="token operator">-&gt;</span>key <span class="token operator">&gt;</span> val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        root<span class="token operator">-&gt;</span>lchild <span class="token operator">=</span> <span class="token function">erase</span><span class="token punctuation">(</span>root<span class="token operator">-&gt;</span>lchild<span class="token punctuation">,</span> val<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>root<span class="token operator">-&gt;</span>key <span class="token operator">&lt;</span> val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        root<span class="token operator">-&gt;</span>rchild <span class="token operator">=</span> <span class="token function">erase</span><span class="token punctuation">(</span>root<span class="token operator">-&gt;</span>rchild<span class="token punctuation">,</span> val<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>root<span class="token operator">-&gt;</span>key <span class="token operator">==</span> val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>root<span class="token operator">-&gt;</span>lchild <span class="token operator">==</span> NIL <span class="token operator">&amp;&amp;</span> root<span class="token operator">-&gt;</span>rchild <span class="token operator">==</span> NIL<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">delete</span> root<span class="token punctuation">;</span>
+            root <span class="token operator">=</span> NIL<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>root<span class="token operator">-&gt;</span>lchild <span class="token operator">==</span> NIL <span class="token operator">||</span> root<span class="token operator">-&gt;</span>rchild <span class="token operator">==</span> NIL<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            Node <span class="token operator">*</span>tmp <span class="token operator">=</span> <span class="token punctuation">(</span>root<span class="token operator">-&gt;</span>lchild <span class="token operator">!=</span> NIL <span class="token operator">?</span> root<span class="token operator">-&gt;</span>lchild <span class="token operator">:</span> root<span class="token operator">-&gt;</span>rchild<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">delete</span> root<span class="token punctuation">;</span>
+            root <span class="token operator">=</span> NIL<span class="token punctuation">;</span>
+            <span class="token keyword">return</span> tmp<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            Node <span class="token operator">*</span>pre <span class="token operator">=</span> <span class="token function">predecedure</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            root<span class="token operator">-&gt;</span>key <span class="token operator">=</span> pre<span class="token operator">-&gt;</span>key<span class="token punctuation">;</span>
+            root<span class="token operator">-&gt;</span>lchild <span class="token operator">=</span> <span class="token function">erase</span><span class="token punctuation">(</span>root<span class="token operator">-&gt;</span>lchild<span class="token punctuation">,</span> pre<span class="token operator">-&gt;</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> root<span class="token punctuation">;</span> <span class="token comment">// the hidden case is that if val was not found, nothing would be changed.</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token function">clear</span><span class="token punctuation">(</span>Node <span class="token operator">*</span>root<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>root <span class="token operator">==</span> NIL<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token punctuation">;</span>
+    <span class="token function">clear</span><span class="token punctuation">(</span>root<span class="token operator">-&gt;</span>lchild<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">clear</span><span class="token punctuation">(</span>root<span class="token operator">-&gt;</span>rchild<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">delete</span> root<span class="token punctuation">;</span>
+    root <span class="token operator">=</span> NIL<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token function">output</span><span class="token punctuation">(</span>Node <span class="token operator">*</span>root<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>root <span class="token operator">==</span> NIL<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token punctuation">;</span>
+    <span class="token function">output</span><span class="token punctuation">(</span>root<span class="token operator">-&gt;</span>lchild<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> root<span class="token operator">-&gt;</span>key <span class="token operator">&lt;&lt;</span> <span class="token string">&quot; -&gt; &quot;</span><span class="token punctuation">;</span>
+    <span class="token function">output</span><span class="token punctuation">(</span>root<span class="token operator">-&gt;</span>rchild<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token function">outS</span><span class="token punctuation">(</span>Node <span class="token operator">*</span>root<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>root <span class="token operator">==</span> NIL<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token function">KEY</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> <span class="token string">&quot;[&quot;</span> <span class="token operator">&lt;&lt;</span> root<span class="token operator">-&gt;</span>h <span class="token operator">&lt;&lt;</span> <span class="token string">&quot;]&quot;</span> <span class="token operator">&lt;&lt;</span> <span class="token string">&quot;(&quot;</span> <span class="token operator">&lt;&lt;</span> <span class="token function">KEY</span><span class="token punctuation">(</span>root<span class="token operator">-&gt;</span>lchild<span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> <span class="token string">&quot;, &quot;</span> <span class="token operator">&lt;&lt;</span> <span class="token function">KEY</span><span class="token punctuation">(</span>root<span class="token operator">-&gt;</span>rchild<span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> <span class="token string">&quot;)&quot;</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token function">outS</span><span class="token punctuation">(</span>root<span class="token operator">-&gt;</span>lchild<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">outS</span><span class="token punctuation">(</span>root<span class="token operator">-&gt;</span>rchild<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> op<span class="token punctuation">,</span> val<span class="token punctuation">;</span>
+    Node <span class="token operator">*</span>root <span class="token operator">=</span> NIL<span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>cin <span class="token operator">&gt;&gt;</span> op <span class="token operator">&gt;&gt;</span> val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">switch</span> <span class="token punctuation">(</span>op<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">case</span> <span class="token number">1</span><span class="token operator">:</span> root <span class="token operator">=</span> <span class="token function">insert</span><span class="token punctuation">(</span>root<span class="token punctuation">,</span> val<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token keyword">case</span> <span class="token number">2</span><span class="token operator">:</span> root <span class="token operator">=</span> <span class="token function">erase</span><span class="token punctuation">(</span>root<span class="token punctuation">,</span> val<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token keyword">break</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token function">output</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        cout <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+        <span class="token function">outS</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        cout <span class="token operator">&lt;&lt;</span> endl <span class="token operator">&lt;&lt;</span> <span class="token string">&quot;-----------------------------&quot;</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="sb树-size-balanced-树"><a href="#sb树-size-balanced-树" class="header-anchor">#</a> SB树（Size Balanced 树）</h3> <p><strong>性质：</strong>
+$$
+Size(left) &gt;= Size(right -&gt;left) \
+Size(left) &gt;= Size(right -&gt;right) \
+Size(right) &gt;= Size(left -&gt;left) \
+Size(right) &gt;= Size(left -&gt; right)
+$$
+**优点：**由于对每个节点的左右子树的节点数量做了限制，所以整棵树不会退化成一个链表</p> <p>思考：</p> <ol><li>高度为H的BS树（二叉搜索树），所包含的节点数量在什么范围之内？</li> <li>高度为H的SB树，所包含的节点数量在什么范围之内？</li></ol></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/algorithm/2_LeetCode.html" class="prev">
+        LeetCode经典面试题
+      </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.72c8bf2a.js" defer></script><script src="/assets/js/2.2702b4bf.js" defer></script><script src="/assets/js/11.632e5645.js" defer></script>
+  </body>
+</html>

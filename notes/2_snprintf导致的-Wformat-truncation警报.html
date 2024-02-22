@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>snprintf导致的-Wformat-truncation警报 | FeoBay的个人博客</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="https://feobay.oss-cn-shanghai.aliyuncs.com/img/terminal.svg">
+    <meta name="description" content="Just for fun">
+    
+    <link rel="preload" href="/assets/css/0.styles.6d920bc0.css" as="style"><link rel="preload" href="/assets/js/app.72c8bf2a.js" as="script"><link rel="preload" href="/assets/js/2.2702b4bf.js" as="script"><link rel="preload" href="/assets/js/20.c1c40422.js" as="script"><link rel="prefetch" href="/assets/js/10.a94df392.js"><link rel="prefetch" href="/assets/js/11.632e5645.js"><link rel="prefetch" href="/assets/js/12.55b415ad.js"><link rel="prefetch" href="/assets/js/13.b6a9667b.js"><link rel="prefetch" href="/assets/js/14.9fa2841e.js"><link rel="prefetch" href="/assets/js/15.db6a460d.js"><link rel="prefetch" href="/assets/js/16.051721e3.js"><link rel="prefetch" href="/assets/js/17.1a82dfdf.js"><link rel="prefetch" href="/assets/js/18.b3fd6f3e.js"><link rel="prefetch" href="/assets/js/19.013ce65f.js"><link rel="prefetch" href="/assets/js/21.a2cce3e9.js"><link rel="prefetch" href="/assets/js/3.3c9c7e39.js"><link rel="prefetch" href="/assets/js/4.d25869ab.js"><link rel="prefetch" href="/assets/js/5.1840f9a3.js"><link rel="prefetch" href="/assets/js/6.03bfa775.js"><link rel="prefetch" href="/assets/js/7.368f46d5.js"><link rel="prefetch" href="/assets/js/8.e438b600.js"><link rel="prefetch" href="/assets/js/9.39ebbd5e.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.6d920bc0.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="https://feobay.oss-cn-shanghai.aliyuncs.com/img/terminal.svg" alt="FeoBay的个人博客" class="logo"> <span class="site-name can-hide">FeoBay的个人博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/cs-basis/" class="nav-link">
+  计算机基础
+</a></div><div class="nav-item"><a href="/algorithm/" class="nav-link">
+  算法刷题
+</a></div><div class="nav-item"><a href="/notes/" class="nav-link router-link-active">
+  随记
+</a></div><div class="nav-item"><a href="https://github.com/feobay" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/cs-basis/" class="nav-link">
+  计算机基础
+</a></div><div class="nav-item"><a href="/algorithm/" class="nav-link">
+  算法刷题
+</a></div><div class="nav-item"><a href="/notes/" class="nav-link router-link-active">
+  随记
+</a></div><div class="nav-item"><a href="https://github.com/feobay" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/notes/" aria-current="page" class="sidebar-link">随记</a></li><li><a href="/notes/1_Windows查看WiFi密码.html" class="sidebar-link">Windows查看已经连接过的WiFi密码</a></li><li><a href="/notes/2_snprintf导致的-Wformat-truncation警报.html" class="active sidebar-link">snprintf导致的-Wformat-truncation警报</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="snprintf导致的-wformat-truncation警报"><a href="#snprintf导致的-wformat-truncation警报" class="header-anchor">#</a> snprintf导致的-Wformat-truncation警报</h1> <p>遇到了两个 <code>-Wformat-truncation</code> 警报，其中一个比较让人困惑，记录一下</p> <div class="language-shell extra-class"><pre class="language-shell"><code>warning: ‘-’ directive output may be truncated writing <span class="token number">1</span> byte into a region of size between <span class="token number">0</span> and <span class="token number">16</span> <span class="token punctuation">[</span>-Wformat-truncation<span class="token operator">=</span><span class="token punctuation">]</span>
+</code></pre></div><p>原始代码如下</p> <div class="language-c extra-class"><pre class="language-c"><code>	<span class="token keyword">char</span> dst_time<span class="token punctuation">[</span><span class="token number">32</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+	<span class="token keyword">struct</span> <span class="token class-name">timeval</span> tv<span class="token punctuation">;</span>
+	<span class="token keyword">struct</span> <span class="token class-name">tm</span> <span class="token operator">*</span>pm<span class="token punctuation">;</span>
+	<span class="token function">gettimeofday</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>tv<span class="token punctuation">,</span> <span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	pm <span class="token operator">=</span> <span class="token function">localtime</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token class-name">time_t</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>tv<span class="token punctuation">.</span>tv_sec<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">snprintf</span><span class="token punctuation">(</span>dst_time<span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>dst_time<span class="token punctuation">)</span><span class="token punctuation">,</span> 
+        <span class="token string">&quot;%04d-%02d-%02d-%02d-%02d-%02d-%03d&quot;</span><span class="token punctuation">,</span>
+        pm<span class="token operator">-&gt;</span>tm_year <span class="token operator">+</span> <span class="token number">1900</span><span class="token punctuation">,</span>
+        pm<span class="token operator">-&gt;</span>tm_mon <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span>
+        pm<span class="token operator">-&gt;</span>tm_mday<span class="token punctuation">,</span>
+        pm<span class="token operator">-&gt;</span>tm_hour<span class="token punctuation">,</span>
+        pm<span class="token operator">-&gt;</span>tm_min<span class="token punctuation">,</span>
+        pm<span class="token operator">-&gt;</span>tm_sec<span class="token punctuation">,</span>
+        <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span>tv<span class="token punctuation">.</span>tv_usec <span class="token operator">/</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p><strong>报警直接原因</strong>：在snprintf的目标缓冲区有可能不足时，会引发阶段warning</p> <p>此处 <code>%02d</code> 对于位数在2位以内的数，不会引发异常，其作为字符串输出的位数仍是2位，但是当位数大于等于3时其实并不会截断，因为截断会影响其原本的值，其正常输出如下：</p> <div class="language-c extra-class"><pre class="language-c"><code><span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;%02d&quot;</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 输出01</span>
+<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;%02d&quot;</span><span class="token punctuation">,</span> <span class="token number">23</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 输出23</span>
+<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;%02d&quot;</span><span class="token punctuation">,</span> <span class="token number">123</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 输出123</span>
+</code></pre></div><p><strong>问题原因</strong>：所以对于上述问题，其问题是，对于占位字符串并不是按照%占位符后所设置的位数来计算的，而是按照int类别数的最大位数来计算的，int类别算上负号最大位数时 $-2 * 10^9$ 也就是<strong>11位</strong></p> <p><strong>解决方法</strong>：所以 <code>dst_time</code>的大小改成100就不会警告了。</p> <div class="language-c extra-class"><pre class="language-c"><code>	<span class="token keyword">char</span> dst_time<span class="token punctuation">[</span><span class="token number">32</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+	<span class="token keyword">struct</span> <span class="token class-name">timeval</span> tv<span class="token punctuation">;</span>
+	<span class="token keyword">struct</span> <span class="token class-name">tm</span> <span class="token operator">*</span>pm<span class="token punctuation">;</span>
+	<span class="token function">gettimeofday</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>tv<span class="token punctuation">,</span> <span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	pm <span class="token operator">=</span> <span class="token function">localtime</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token class-name">time_t</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>tv<span class="token punctuation">.</span>tv_sec<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">snprintf</span><span class="token punctuation">(</span>dst_time<span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>dst_time<span class="token punctuation">)</span><span class="token punctuation">,</span> 
+        <span class="token string">&quot;%04d-%02d-%02d-%02d-%02d-%02d-%03d&quot;</span><span class="token punctuation">,</span>
+        pm<span class="token operator">-&gt;</span>tm_year <span class="token operator">+</span> <span class="token number">1900</span><span class="token punctuation">,</span>
+        pm<span class="token operator">-&gt;</span>tm_mon <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span>
+        pm<span class="token operator">-&gt;</span>tm_mday<span class="token punctuation">,</span>
+        pm<span class="token operator">-&gt;</span>tm_hour<span class="token punctuation">,</span>
+        pm<span class="token operator">-&gt;</span>tm_min<span class="token punctuation">,</span>
+        pm<span class="token operator">-&gt;</span>tm_sec<span class="token punctuation">,</span>
+        <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span>tv<span class="token punctuation">.</span>tv_usec <span class="token operator">/</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h5 id="扩展知识"><a href="#扩展知识" class="header-anchor">#</a> 扩展知识</h5> <p>其它可以消除报警的方法记录：</p> <div class="language-c extra-class"><pre class="language-c"><code><span class="token comment">// 1.如果上述传入值范围本身有限制，那么可以不用增大目标缓冲区，就可以通过接收返回值的方式消除警报</span>
+	<span class="token keyword">int</span> ret <span class="token operator">=</span> <span class="token function">snprintf</span><span class="token punctuation">(</span>dst<span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>dst<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">&quot;%s!&quot;</span><span class="token punctuation">,</span> src<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>ret <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+         <span class="token function">abort</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token comment">// 2.使用编译宏</span>
+    <span class="token comment">// use compiler specific pragmas to disable the warning</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">pragma</span> <span class="token expression">GCC diagnostic push</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">pragma</span> <span class="token expression">GCC diagnostic ignored </span><span class="token string">&quot;-Wformat-truncation&quot;</span></span>
+    <span class="token function">snprintf</span><span class="token punctuation">(</span>dst<span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>dst<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">&quot;%s!&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;a&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">pragma</span> <span class="token expression">GCC diagnostic pop</span></span>
+
+<span class="token comment">// 3.使用volatile关键字</span>
+<span class="token keyword">volatile</span> <span class="token keyword">int</span> dst_size <span class="token operator">=</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>dst<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">snprintf</span><span class="token punctuation">(</span>dst<span class="token punctuation">,</span> dst_size<span class="token punctuation">,</span> <span class="token string">&quot;%s!&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;a&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p><strong>volatile</strong></p> <p>volatile是一个<strong>类型修饰符</strong>（type specifier），就像我们熟悉的const一样，它是被设计用来修饰被不同线程访问和修改的<strong>变量</strong>；volatile的作用是作为指令关键字，确保本条指令不会因编译器的优化而省略，且要求每次直接读值。</p> <p>volatile的变量是说这变量可能会被意想不到地改变，这样，编译器就不会去假设这个变量的值了。</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/notes/1_Windows查看WiFi密码.html" class="prev">
+        Windows查看已经连接过的WiFi密码
+      </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.72c8bf2a.js" defer></script><script src="/assets/js/2.2702b4bf.js" defer></script><script src="/assets/js/20.c1c40422.js" defer></script>
+  </body>
+</html>
